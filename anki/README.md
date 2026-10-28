@@ -1,6 +1,6 @@
 # Flashcards do Anki
 
-Os baralhos distribuÃ­dos neste diretÃ³rio usam o formato `.apkg`, formato de pacote do Anki.
+Os baralhos distribuídos neste diretório usam o formato `.apkg`, formato de pacote do Anki.
 
 ## Como importar
 
