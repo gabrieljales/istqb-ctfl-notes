@@ -1,0 +1,21 @@
+# Arquivos temporários e backups
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig
+*~
+
+# Arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Arquivos temporários de editores
+.vscode/*.log
+.idea/
+
+# Scripts de setup e arquivos de configuração inicial
+setup.sh
+setup.ps1
