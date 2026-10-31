@@ -162,3 +162,130 @@ Os objetivos **típicos** do teste são:
 ### 1.2.3 Erros, defeitos, falhas e causas-raiz
 
 ![Imagem de autoria própria feita no Excalidraw](../assets/img_0002_chapter_1.2.3.png)
+
+- Causa Raiz (O "porquê" original)
+    - É o motivo fundamental. Se você resolver isso, evita que novos erros  parecidos aconteçam;
+    - Ocorre no processo ou ambiente.
+    
+    ```
+    Exemplo:
+
+        -> "Porque o dev errou o cálculo?"
+            --> Porque o documento de requisitos estava confuso;
+                ---> A falta de clareza no requisito é a causa-raiz. Se você melhorar o requisito, os desenvolvedores tendem a não cometerem mais o erro;
+    ```
+
+- Erro (O equívoco humano):
+    - O erro (equívoco) acontece na cabeça do ser humano, é uma ação ou decisão incorreta;
+    - Ocorre na mente de quem está trabalhando;
+    - Humanos cometem erros por vários motivos, como:
+        - Pressão de tempo;
+        - Complexidade dos produtos de trabalho;
+        - Processos;
+        - Infraestrutura ou interações;
+        - Cansaço;
+        - Falta de treinamento adequado.
+    
+    ```
+    Exemplo:
+
+        -> O desenvolvedor está com sono (causa-raiz) e pensa que o imposto deve ser somado, quando deveria ser subtraído.
+            --> O ato de digitar o sinal de "+" invés de "-" é o erro.
+    ```
+
+- Defeito (O bug no papel/código):
+    - O defeito (Bug) é o resultado físico do erro (equívoco). É a prova do crime que ficou registrada no sistema ou documento;
+    - ocorre no código fonte, nos requisitos, no script de teste;
+
+
+    ```
+    Exemplo:
+
+        -> A linha de código "total = valor + imposto" (quando o certo seria "total = valor - imposto").
+            --> O defeito está lá, "parado", mesmo que ninguém rode/execute o programa.
+    ```
+
+- Falha (O comportamento errado):
+    - A falha é quando o sistema "pifa" ou faz algo que o usuário não queria. É o evento visível;
+    - Ocorre durante a execução (Teste dinâmico);
+    - IMPORTANTE: 
+        - Um defeito pode ficar "escondido" e nunca gerar uma falha se aquela parte do código nunca for executada;
+        - Testes estático **NÃO** podem causar falhas! Falhas só ocorrem durante a execução do código durante o teste dinâmico.
+            - Se não tem execução, não tem como o sistema se comportar de forma errado e, portanto, não existe falha;
+            > Lembre-se que os testes estáticos encontram defeitos diretamente no artefatos (requisitos, código e etc) sem rodar o sistema, então você apenas lê e encontra o defeito antes que ele seja executado.
+
+
+    ```
+    Exemplo:
+    
+        -> O cliente fecha a compra e o sistema cobra R$110 em vez de R$90.
+            --> O cliente vê o valor errado na tela, isso é uma falha.
+    ```
+
+## 1.3 Princípios de teste
+
+**1 - O teste mostra a presença, não a ausência de defeitos.**
+- Testes reduzem a probabilidade de defeitos não serem descobertos, mas mesmo que nenhum defeito seja encontrado, os testes não podem provar que o objeto de teste está 100% correto.
+
+**2 - Testes exaustivos são impossíveis**
+- Testar tudo é inviável, escolha o que é mais importante;
+- Use as técnicas de teste, a priorização de casos e os testes baseados em riscos para concentrar esforços;
+- Exceção: Casos triviais (simples), como testar uma função liga e desliga.
+
+**3 - Testes antecipados economizam tempo e dinheiro.**
+- Quando mais cedo o teste começa, mais barato fica o conserto;
+- Testes estáticos e dinâmicos devem ser iniciados o mais cedo possível.
+
+**4 - Os defeitos se agrupam.**
+- A maioria dos erros ficam em poucos módulos;
+- Princípio de Pareto (80/20): 80% dos problemas estão em 20% do código.
+
+**5 - Os testes se degradam.**
+- Se os mesmos testes forem repetidos muitas vezes, eles se tornarão ineficazes para encontrar novos defeitos;
+- Igual um inseticida em que os insetos vão ficando imunes com o tempo;
+- É preciso atualizar ou criar novos testes;
+- Em alguns casos a repetição é benéfico, como testes regressivos e automatizados.
+
+**6 - Testes dependem do contexto.**
+- Os testes são feitos de forma diferente em contextos diferentes;
+- A estratégia muda conforme o sistema.
+
+**7 - Falácia da ausência de erros.**
+
+- É errado esperar que a verificação do software garanta o sucesso do sistema. Além da verificação, a validação também deve ser realizada.
+
+    > **Resumindo:** Não adianta que o software não tenha erros se ele não faz o que o usuário precisa, ou até mesmo se ninguém consegue usar.
+
+## 1.4 Atividades de teste, Testware e papéis no teste
+
+- Sabemos que o teste depende de contexto (Princípio 6), mas há um conjunto de atividades comuns de teste que sem elas é menos provável que os testes atinjam seus objetivos.
+    - Esse conjunto de atividades formam o **Processo de Teste**;
+    - A norma ISO/IEC/IEEE 29119-2 fornece informações sobre processos de teste.
+
+### 1.4.1 Atividades e Tarefas de teste
+
+- **Planejamento do teste:** Definir objetivos e a estratégia.
+    - Aqui é decidido "onde se quer chegar".
+
+- **Monitoramento de teste e controle:** Verificar se o que foi planejado está acontecendo (monitoramento). Se algo sair dos trilhos, ações são tomadas (controle).
+    - **Monitoramento:** Envolve verificar continuamente as atividades de teste e comparar o progresso real com o plano;
+    - **Controle:** Tomada de ações necessárias para atingir os objetivos do teste.
+
+- **Análise de teste:** Olhar requisitos para identificar o que pode ser testado, além de identificar riscos e condições de teste.
+    - "O que precisa ser testado?"
+
+- **Modelagem de teste:** Elaboração dos casos de teste, o desenho do roteiro. Aqui é definido ambiente e os dados necessários.
+    - "Como testar?"
+    > Observação: Modelagem de teste também é conhecida como "Projeto de teste" (nomenclatura antiga).
+
+- **Implementação do teste:** Criação ou aquisição do material de teste necessário para a execução.
+    - O preparar, deixar tudo pronto para "rodar" o teste;
+    - "Temos o que precisamos para começar a rodar?".
+
+- **Execução do teste:** Rodar os testes (manual ou automático) e comparar o que aconteceu com o que era esperado.
+    - "O sistema se comportou como deveria?".
+
+- **Conclusão de teste:** Criar relatório final, ver quais bugs ficaram abertos e o que aprendemos para a próxima vez.
+    - "O que entregamos e o que podemos melhorar para o próximo ciclo?".
+
+    > Observação: Não necessariamente essas atividades seguem uma sequência lógica, geralmente são implementadas de forma iterativa ou paralela.
