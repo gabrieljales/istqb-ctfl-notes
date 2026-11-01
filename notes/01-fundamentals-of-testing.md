@@ -289,3 +289,20 @@ Os objetivos **típicos** do teste são:
     - "O que entregamos e o que podemos melhorar para o próximo ciclo?".
 
     > Observação: Não necessariamente essas atividades seguem uma sequência lógica, geralmente são implementadas de forma iterativa ou paralela.
+
+### 1.4.2 Processo de teste no contexto
+
+- Testes não são realizados de forma isolada;
+    - Integram os processos de desenvolvimento executados em uma organização;
+    - São financiados pelos stakeholders e seu objetivo final é ajudar a entender às necessidades de negócio deles.
+- Teste depende de fatores contextuais como:
+    - Stakeholders (necessidades, expectativas);
+    - Membros da equipe (conhecimento, experiência);
+    - Domínio do negócio;
+    - Fatores técnicos;
+    - Restrições do projeto;
+    - Fatores organizacionais;
+    - Ciclo de vida do desenvolvimento de software;
+    - Ferramentas.
+
+### 1.4.3 Testware
